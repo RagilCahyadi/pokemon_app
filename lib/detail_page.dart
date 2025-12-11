@@ -16,12 +16,43 @@ class _DetailPageState extends State<DetailPage> {
     return Scaffold(
       body: SafeArea(
         child: Padding(
-          padding: EdgeInsetsGeometry.all(16.0),
+          padding: const EdgeInsets.all(24.0),
           child: Column(
-            mainAxisAlignment: MainAxisAlignment.center,
+            children: [
+              Row(
+                mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                crossAxisAlignment: CrossAxisAlignment.center,
+                children: [
+                  IconButton(
+                    onPressed: () {
+                      Navigator.pop(context);
+                    },
+                    icon: const Icon(Icons.arrow_back, size: 30),
+                  ),
+                        
+                  Column(
+                    children: [
+                      Text(
+                        widget.pokemon.name,
+                        style: const TextStyle(
+                          fontSize: 24,
+                          fontWeight: FontWeight.bold,
+                          color: Color.fromRGBO(46, 58, 89, 1),
+                        ),
+                      ),
+                      Text(widget.pokemon.type),
+                    ],
+                  ),
+                  
+                  const SizedBox(width: 48),
+                ],
+              ),
+          
+              const SizedBox(height: 20),
+            ],
           ),
-          )
         ),
+      ),
     );
   }
 }

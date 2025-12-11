@@ -1,9 +1,6 @@
-import 'dart:developer';
-
 import 'package:flutter/material.dart';
 import 'package:pokemon_app/detail_page.dart';
 import 'package:pokemon_app/model/dummy_data.dart';
-import 'package:pokemon_app/model/pokemon.dart';
 import 'package:pokemon_app/shared/widget/pokemon_card_widget.dart';
 
 class HomePage extends StatelessWidget {
