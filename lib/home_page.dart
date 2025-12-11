@@ -1,7 +1,9 @@
 import 'dart:developer';
 
 import 'package:flutter/material.dart';
+import 'package:pokemon_app/detail_page.dart';
 import 'package:pokemon_app/model/dummy_data.dart';
+import 'package:pokemon_app/model/pokemon.dart';
 import 'package:pokemon_app/shared/widget/pokemon_card_widget.dart';
 
 class HomePage extends StatelessWidget {
@@ -87,9 +89,14 @@ class HomePage extends StatelessWidget {
         ), 
         itemCount: dummyPokemonList.length,
         itemBuilder: (context, index) {
+          final pokemon = dummyPokemonList[index];
           return PokemonCardWidget(
             onTap: () {
-              log(dummyPokemonList[index].name);
+              Navigator.push(
+                context,
+                MaterialPageRoute(
+                  builder: (context) => DetailPage(pokemon: pokemon))
+              );
             },
             imageUrl: dummyPokemonList[index].imageUrl,
             name: dummyPokemonList[index].name,
