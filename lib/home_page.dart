@@ -12,7 +12,7 @@ class HomePage extends StatelessWidget {
     final searchName = TextEditingController();
     return Scaffold(
       body: SafeArea(
-        child: Padding(padding: const EdgeInsets.all(16.0), child: Column(
+        child: Padding(padding: const EdgeInsets.all(24.0), child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
             headerText(),
@@ -55,19 +55,22 @@ class HomePage extends StatelessWidget {
           controller: searchName,
           decoration: InputDecoration(
             hintText: "Search a Pokemon", 
-            border: OutlineInputBorder(),
+            border: OutlineInputBorder(
+              borderRadius: BorderRadius.circular(12)
+            ),
             prefixIcon: Icon(Icons.search),
+            
           ),
         )),
         Container(
           padding: EdgeInsets.all(8.0),
-          height: 60,
-          width: 60,
+          height: 55,
+          width: 55,
           decoration: BoxDecoration(
-            borderRadius: BorderRadius.circular(6),
-            color: Colors.grey,
+            borderRadius: BorderRadius.circular(10),
+            color: const Color.fromRGBO(93, 95, 124, 1),
           ),
-          child: Icon(Icons.filter_list),
+          child: Icon(Icons.filter_list, color: Colors.white),
         ),
       ],
     );
@@ -79,8 +82,8 @@ class HomePage extends StatelessWidget {
         gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
         crossAxisCount: 2,
         childAspectRatio: 3/4,
-        crossAxisSpacing: 10,
-        mainAxisSpacing: 8
+        crossAxisSpacing: 12,
+        mainAxisSpacing: 12
         ), 
         itemCount: dummyPokemonList.length,
         itemBuilder: (context, index) {

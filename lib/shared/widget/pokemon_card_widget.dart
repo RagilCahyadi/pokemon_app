@@ -21,7 +21,7 @@ class PokemonCardWidget extends StatelessWidget {
       onTap: onTap,
       child: Container(
         decoration: BoxDecoration(
-          color: type == "Grass" ? Colors.green : type == "Fire" ? Colors.red : Colors.blue,
+          color: type == "Grass" ? const Color.fromRGBO(196, 228, 213, 1) : type == "Fire" ? const Color.fromRGBO(239, 221, 186, 1) : const Color.fromRGBO(190, 219, 221, 1),
           borderRadius: BorderRadius.circular(12),
         ),
         child: Column(
