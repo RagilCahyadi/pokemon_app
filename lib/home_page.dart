@@ -98,9 +98,9 @@ class HomePage extends StatelessWidget {
                   builder: (context) => DetailPage(pokemon: pokemon))
               );
             },
-            imageUrl: dummyPokemonList[index].imageUrl,
-            name: dummyPokemonList[index].name,
-            type: dummyPokemonList[index].type,
+            imageUrl: pokemon.imageUrl,
+            name: pokemon.name,
+            type: pokemon.type,
           );
         },),
     );
