@@ -29,7 +29,7 @@ class _DetailPageState extends State<DetailPage> {
                     },
                     icon: const Icon(Icons.arrow_back, size: 30),
                   ),
-                        
+
                   Column(
                     children: [
                       Text(
@@ -43,12 +43,36 @@ class _DetailPageState extends State<DetailPage> {
                       Text(widget.pokemon.type),
                     ],
                   ),
-                  
+
                   const SizedBox(width: 48),
                 ],
               ),
-          
+
               const SizedBox(height: 20),
+
+              SizedBox(
+                height: 400,
+                width: double.infinity,
+                child: Container(
+                  decoration: BoxDecoration(
+                    color: widget.pokemon.type == "Grass"
+                        ? const Color.fromRGBO(196, 228, 213, 1)
+                        : widget.pokemon.type == "Fire"
+                        ? const Color.fromRGBO(239, 221, 186, 1)
+                        : const Color.fromRGBO(190, 219, 221, 1),
+                    borderRadius: BorderRadius.circular(12),
+                  ),
+                  child: Column(
+                    children: [
+                      Image.network(
+                        widget.pokemon.imageUrl,
+                        fit: BoxFit.fill,
+                        width: double.infinity,
+                      ),
+                    ],
+                  ),
+                ),
+              ),
             ],
           ),
         ),
