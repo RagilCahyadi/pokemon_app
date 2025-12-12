@@ -13,6 +13,7 @@ class DetailPage extends StatefulWidget {
 class _DetailPageState extends State<DetailPage> {
   @override
   Widget build(BuildContext context) {
+    final pokemon = widget.pokemon;
     return Scaffold(
       body: SafeArea(
         child: Padding(
@@ -23,24 +24,18 @@ class _DetailPageState extends State<DetailPage> {
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
                 crossAxisAlignment: CrossAxisAlignment.center,
                 children: [
-                  IconButton(
-                    onPressed: () {
-                      Navigator.pop(context);
-                    },
-                    icon: const Icon(Icons.arrow_back, size: 30),
-                  ),
-
+                  backButton(),
                   Column(
                     children: [
                       Text(
-                        widget.pokemon.name,
+                        pokemon.name,
                         style: const TextStyle(
                           fontSize: 24,
                           fontWeight: FontWeight.bold,
                           color: Color.fromRGBO(46, 58, 89, 1),
                         ),
                       ),
-                      Text(widget.pokemon.type),
+                      Text(pokemon.type),
                     ],
                   ),
 
@@ -55,9 +50,9 @@ class _DetailPageState extends State<DetailPage> {
                 width: double.infinity,
                 child: Container(
                   decoration: BoxDecoration(
-                    color: widget.pokemon.type == "Grass"
+                    color: pokemon.type == "Grass"
                         ? const Color.fromRGBO(196, 228, 213, 1)
-                        : widget.pokemon.type == "Fire"
+                        : pokemon.type == "Fire"
                         ? const Color.fromRGBO(239, 221, 186, 1)
                         : const Color.fromRGBO(190, 219, 221, 1),
                     borderRadius: BorderRadius.circular(12),
@@ -65,7 +60,7 @@ class _DetailPageState extends State<DetailPage> {
                   child: Column(
                     children: [
                       Image.network(
-                        widget.pokemon.imageUrl,
+                        pokemon.imageUrl,
                         fit: BoxFit.fill,
                         width: double.infinity,
                       ),
@@ -79,4 +74,14 @@ class _DetailPageState extends State<DetailPage> {
       ),
     );
   }
+
+  Widget backButton() {
+    return IconButton(
+      onPressed: () {
+        Navigator.pop(context);
+      },
+      icon: Icon(Icons.arrow_back, size: 30),
+    );
+  }
+  
 }
