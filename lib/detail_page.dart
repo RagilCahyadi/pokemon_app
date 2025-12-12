@@ -25,20 +25,7 @@ class _DetailPageState extends State<DetailPage> {
                 crossAxisAlignment: CrossAxisAlignment.center,
                 children: [
                   backButton(),
-                  Column(
-                    children: [
-                      Text(
-                        pokemon.name,
-                        style: const TextStyle(
-                          fontSize: 24,
-                          fontWeight: FontWeight.bold,
-                          color: Color.fromRGBO(46, 58, 89, 1),
-                        ),
-                      ),
-                      Text(pokemon.type),
-                    ],
-                  ),
-
+                  headerText(pokemon),
                   const SizedBox(width: 48),
                 ],
               ),
@@ -83,5 +70,21 @@ class _DetailPageState extends State<DetailPage> {
       icon: Icon(Icons.arrow_back, size: 30),
     );
   }
-  
+
+  Widget headerText(Pokemon pokemon){
+    return Column(
+      children: [
+        Text(
+          pokemon.name,
+          style: const TextStyle(
+            fontSize: 24,
+            fontWeight: FontWeight.bold,
+            color: Color.fromRGBO(46, 58, 89, 1),
+          ),
+        ),
+        Text(pokemon.type)
+      ],
+    );
+  }
+
 }
