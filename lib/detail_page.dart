@@ -32,29 +32,7 @@ class _DetailPageState extends State<DetailPage> {
 
               const SizedBox(height: 20),
 
-              SizedBox(
-                height: 400,
-                width: double.infinity,
-                child: Container(
-                  decoration: BoxDecoration(
-                    color: pokemon.type == "Grass"
-                        ? const Color.fromRGBO(196, 228, 213, 1)
-                        : pokemon.type == "Fire"
-                        ? const Color.fromRGBO(239, 221, 186, 1)
-                        : const Color.fromRGBO(190, 219, 221, 1),
-                    borderRadius: BorderRadius.circular(12),
-                  ),
-                  child: Column(
-                    children: [
-                      Image.network(
-                        pokemon.imageUrl,
-                        fit: BoxFit.fill,
-                        width: double.infinity,
-                      ),
-                    ],
-                  ),
-                ),
-              ),
+              pokemonCard(pokemon),
             ],
           ),
         ),
@@ -71,7 +49,7 @@ class _DetailPageState extends State<DetailPage> {
     );
   }
 
-  Widget headerText(Pokemon pokemon){
+  Widget headerText(Pokemon pokemon) {
     return Column(
       children: [
         Text(
@@ -82,9 +60,34 @@ class _DetailPageState extends State<DetailPage> {
             color: Color.fromRGBO(46, 58, 89, 1),
           ),
         ),
-        Text(pokemon.type)
+        Text(pokemon.type),
       ],
     );
   }
 
+  Widget pokemonCard(Pokemon pokemon) {
+    return SizedBox(
+      height: 400,
+      width: double.infinity,
+      child: Container(
+        decoration: BoxDecoration(
+          color: pokemon.type == "Grass"
+              ? const Color.fromRGBO(196, 228, 213, 1)
+              : pokemon.type == "Fire"
+              ? const Color.fromRGBO(239, 221, 186, 1)
+              : const Color.fromRGBO(190, 219, 221, 1),
+          borderRadius: BorderRadius.circular(12),
+        ),
+        child: Column(
+          children: [
+            Image.network(
+              pokemon.imageUrl,
+              fit: BoxFit.fill,
+              width: double.infinity,
+            ),
+          ],
+        ),
+      ),
+    );
+  }
 }
