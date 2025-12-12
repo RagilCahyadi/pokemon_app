@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:pokemon_app/model/pokemon.dart';
+import 'package:pokemon_app/shared/widget/pokemon_card_widget.dart';
 
 class DetailPage extends StatefulWidget {
   final Pokemon pokemon;
@@ -69,25 +70,13 @@ class _DetailPageState extends State<DetailPage> {
     return SizedBox(
       height: 400,
       width: double.infinity,
-      child: Container(
-        decoration: BoxDecoration(
-          color: pokemon.type == "Grass"
-              ? const Color.fromRGBO(196, 228, 213, 1)
-              : pokemon.type == "Fire"
-              ? const Color.fromRGBO(239, 221, 186, 1)
-              : const Color.fromRGBO(190, 219, 221, 1),
-          borderRadius: BorderRadius.circular(12),
-        ),
-        child: Column(
-          children: [
-            Image.network(
-              pokemon.imageUrl,
-              fit: BoxFit.fill,
-              width: double.infinity,
-            ),
-          ],
-        ),
+      child: PokemonCardWidget(
+        type: pokemon.type,
+        imageUrl: pokemon.imageUrl,
+        showType: false,
       ),
     );
   }
 }
+
+
