@@ -1,16 +1,10 @@
-# pokemon_app
+# (Pokedex) Pengembangan Aplikasi Mobile
 
-A new Flutter project.
+**Rahmansyah Ragil Cahyadi (3012310034) IF-5B**
 
-## Getting Started
+Lecturer: Moch. Nurul Indra Al Fauzan
 
-This project is a starting point for a Flutter application.
+---
+# Hasil Pengerjaan
+<img width="200" height="400" alt="Image" src="https://github.com/user-attachments/assets/6df2688c-a278-4bfc-ba58-3a9087a9cb4d" />  <img width="200" height="400" alt="Image" src="https://github.com/user-attachments/assets/1cd4f62c-5699-46da-a891-83e8e2b9c107" />
 
-A few resources to get you started if this is your first Flutter project:
-
-- [Lab: Write your first Flutter app](https://docs.flutter.dev/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://docs.flutter.dev/cookbook)
-
-For help getting started with Flutter development, view the
-[online documentation](https://docs.flutter.dev/), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
